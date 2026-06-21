@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库 · 乐鱼体育 主题说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f7f4ed;
+            color: #2f2e2c;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fdfbf8;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2.2rem;
+        }
+
+        /* 标题体系 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            border-left: 5px solid #b7a78a;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            color: #3b3a37;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 2rem 0 1rem 0;
+            color: #4b4945;
+            border-bottom: 1px solid #e2dbd0;
+            padding-bottom: 0.4rem;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #4f4c48;
+        }
+
+        /* 正文排版 */
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        a {
+            color: #5a6b5a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b7b0a3;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+        a:hover {
+            color: #2f5c2f;
+            text-decoration-color: #2f5c2f;
+        }
+
+        /* 引用块 / 提示框 */
+        .quote-block {
+            background: #f3efe8;
+            border-left: 6px solid #b1a086;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #3e3c38;
+        }
+        .info-box {
+            background: #edeae2;
+            border-radius: 18px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0;
+            border: 1px solid #ddd6ca;
+        }
+        .info-box strong {
+            color: #4f4b44;
+        }
+
+        /* 目录式卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0 1rem;
+        }
+        .card {
+            background: #faf8f3;
+            border: 1px solid #e3dbcf;
+            border-radius: 18px;
+            padding: 1.2rem 1.3rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .card:hover {
+            border-color: #c6bcab;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .card-title {
+            font-weight: 530;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+            color: #3e3b36;
+        }
+        .card-summary {
+            color: #5b5852;
+            font-size: 0.95rem;
+        }
+
+        /* 相关信息区域 —— 小字号列表风格 */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .info-list li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #e2d9cd;
+            display: flex;
+            gap: 0.6rem;
+            align-items: baseline;
+        }
+        .info-list li::before {
+            content: "▹";
+            color: #9f937e;
+            font-size: 1rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin: 1rem 0;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #ece6dc;
+        }
+        .faq-q {
+            font-weight: 530;
+            color: #46433e;
+        }
+        .faq-a {
+            margin-top: 0.2rem;
+            color: #5c5952;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e4ddd1;
+            margin: 2rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.8rem; }
+            .page { padding: 1.8rem 1.2rem; }
+            h1 { font-size: 1.6rem; padding-left: 1rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <h1>📚 乐鱼体育 · 知识库概述</h1>
+
+        <p>
+            体育赛事的数据与内容生态，早已不止于比分与排名。围绕“乐鱼体育”这一主题，我们整理了一份轻量知识库，从赛事基础、运动场景、用户行为到内容结构，尝试提供一种理解体育内容的新视角。下面的卡片与说明段落，并非指南或操作手册，而是一个围绕关键词展开的概念索引。
+        </p>
+
+        <!-- 目录式卡片网格 -->
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title">🏀 赛事数据层</div>
+                <div class="card-summary">实时赛程、历史对阵、队伍统计、赛季变化。数据颗粒度从联赛到单回合。</div>
+            </div>
+            <div class="card">
+                <div class="card-title">⚽ 用户关注场景</div>
+                <div class="card-summary">赛前情报、直播伴随、赛后复盘、社区讨论。关注习惯随赛事阶段变化。</div>
+            </div>
+            <div class="card">
+                <div class="card-title">🎾 内容呈现形式</div>
+                <div class="card-summary">图文快讯、数据图表、短视频集锦、长文分析。不同媒介对应不同信息深度。</div>
+            </div>
+            <div class="card">
+                <div class="card-title">🏐 体育文化标签</div>
+                <div class="card-summary">球队文化、经典对决、赛季叙事、球迷话语。体育内容同样具备人文厚度。</div>
+            </div>
+        </div>
+
+        <h2>一、从关键词到主题结构</h2>
+        <p>
+            “乐鱼体育”作为一个聚合概念，其背后可以拆解为若干信息模块。以赛事数据层为例，完整赛季的赛程、主客场分布、近期交锋记录，构成了最基础的叙事单元。用户关注场景则从信息获取动机出发：一部分人需要快速比分，另一部分人更关注战术演变或球员动态。这两种需求并非互斥，而是在不同内容载体中交错出现。
+        </p>
+
+        <div class="quote-block">
+            <strong>引用 · 内容设计思路</strong><br>
+            体育知识库的难点不在于信息量，而在于如何将赛程、数据、观点与用户场景自然衔接。一个好的索引应当是“可浏览的”，而非仅可检索。
+        </div>
+
+        <p>
+            在内容呈现方面，图文快讯适合传递即时消息，而长文分析则可以承载战术板、历史对比等深度信息。短视频集锦则更偏向情绪与瞬间记忆。理想的知识库入口，需要为每一种内容形式预留说明空间，而非简单罗列链接。
+        </p>
+
+        <h2>二、体育内容中的文化层</h2>
+        <p>
+            体育从来不止于胜负。经典对决背后的城市认同、赛季中段的交易与伤病叙事、球迷社区内部的黑话与梗——这些文化标签同样构成“乐鱼体育”的有机部分。知识库中如果缺少对文化背景的概述，信息会显得干燥而扁平。例如，不同联赛的德比文化、特定队伍的战术风格传承，都是值得展开的侧枝。
+        </p>
+
+        <div class="info-box">
+            <strong>📍 提示</strong><br>
+            本知识库内的所有内容均基于公开赛事信息与一般体育知识整理，不涉及实时博彩、投注引导或任何形式的胜负预测。请保持理性观赛习惯。
+        </div>
+
+        <h2>三、相关信息与资源索引</h2>
+        <p>
+            以下列出与本主题关系密切的几个内容方向，每个方向均可作为独立的知识子集进一步展开。这些条目并非固定分类，而是一种内容地图的示例。
+        </p>
+
+        <ul class="info-list">
+            <li>赛程编排逻辑：联赛周期、主客场轮换、杯赛与联赛并行规则</li>
+            <li>运动项目基础：规则演变、场地标准、主要裁判判例</li>
+            <li>历史档案：经典赛季回顾、纪录保持者、传奇队伍兴衰</li>
+            <li>媒体与叙事：体育媒体发展、解说风格、球迷文化研究</li>
+            <li>数据工具：常见统计指标释义、进阶数据模型简介（如预期进球、球员效率评级）</li>
+        </ul>
+
+        <h2>四、常见问题摘要 (FAQ)</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">问：知识库内容是否覆盖所有体育项目？</div>
+            <div class="faq-a">目前以足球、篮球、网球、排球等主流项目为主，同时包含部分综合性赛事（如奥运会、亚运会）的专题内容。非主流项目会根据用户兴趣逐步补充。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：赛事数据更新频率如何？</div>
+            <div class="faq-a">常规联赛数据每日同步，历史数据及深度分析按周或月更新。所有数据均标注来源与时间戳，便于交叉验证。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：是否可以引用知识库内容进行二次创作？</div>
+            <div class="faq-a">引用基本事实与公开数据无需额外授权，但建议标注出处。若涉及独家分析或编译内容，请参照页面底部的版权说明。</div>
+        </div>
+
+        <hr>
+
+        <p style="font-size: 0.95rem; color: #6b6761;">
+            本文档属于“乐鱼体育”主题知识库的入口页面，旨在提供概念索引与内容结构说明。如需了解更多赛事信息、数据概览及运动文化内容，可参阅 
+            <a href="https://h5-main-leyu.com.cn">乐鱼体育</a> 
+            相关板块。页面内容基于公开资料整理，不构成任何专业性建议或倾向性引导。
+        </p>
+
+        <p style="font-size: 0.88rem; color: #8a857c; margin-top: 2rem; border-top: 1px solid #e7e0d4; padding-top: 1.2rem;">
+            © 知识库说明 · 版本 1.0 · 内容持续更新
+        </p>
+
+    </div>
+</body>
+</html>
