@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>球探比分 · 賽事實時入口說明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f6fafc;
+      color: #1b2b36;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 0 60px;
+    }
+
+    /* 導航暗示 / hero 區 */
+    .hero {
+      background: linear-gradient(145deg, #d5f0ee 0%, #e7f6f5 100%);
+      padding: 40px 30px;
+      border-radius: 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 8px 18px rgba(0, 50, 50, 0.06);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #004d4d;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      color: #1f4444;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #1f7a7a;
+      color: white;
+      font-size: 0.85rem;
+      padding: 4px 14px;
+      border-radius: 40px;
+      margin-top: 20px;
+    }
+
+    /* 摘要卡片 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    @media (min-width: 600px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 22px;
+      box-shadow: 0 4px 12px rgba(0, 70, 70, 0.04);
+      border: 1px solid rgba(0, 128, 128, 0.10);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(0, 90, 90, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #006363;
+      margin-bottom: 12px;
+      border-left: 4px solid #009999;
+      padding-left: 12px;
+    }
+
+    .card p {
+      color: #294a4a;
+      font-size: 0.95rem;
+    }
+
+    .card .icon-em {
+      display: inline-block;
+      background: #d9f0f0;
+      color: #005c5c;
+      border-radius: 30px;
+      padding: 2px 12px;
+      font-size: 0.8rem;
+      margin-top: 12px;
+    }
+
+    /* 場景與建議區 */
+    .scenario-section {
+      background: white;
+      border-radius: 28px;
+      padding: 36px 30px;
+      margin: 40px 0;
+      border: 1px solid rgba(0, 128, 128, 0.07);
+    }
+
+    .scenario-section h2 {
+      font-size: 1.6rem;
+      font-weight: 450;
+      color: #004f4f;
+      margin-bottom: 28px;
+      border-bottom: 2px solid #b3e0e0;
+      padding-bottom: 10px;
+    }
+
+    .scenario-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    @media (min-width: 680px) {
+      .scenario-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .scenario-item {
+        flex: 1 1 240px;
+      }
+    }
+
+    .scenario-item h4 {
+      font-size: 1.05rem;
+      color: #007a7a;
+      margin-bottom: 6px;
+    }
+
+    .scenario-item p {
+      color: #2b4f4f;
+      font-size: 0.95rem;
+    }
+
+    /* 提示區塊 */
+    .tips-box {
+      background: #e5f3f2;
+      border-radius: 20px;
+      padding: 32px 28px;
+      margin: 40px 0;
+      border-left: 6px solid #008080;
+    }
+
+    .tips-box h3 {
+      font-size: 1.2rem;
+      color: #005353;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tips-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-box li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 90, 90, 0.08);
+      color: #1d4040;
+      font-size: 0.95rem;
+    }
+
+    .tips-box li:last-child {
+      border-bottom: none;
+    }
+
+    .tips-box li::before {
+      content: "▹";
+      color: #009999;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 26px;
+      box-shadow: 0 2px 8px rgba(0, 70, 70, 0.02);
+      margin: 36px 0;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.3rem;
+      color: #006161;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 18px;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: #006b6b;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .faq-item p {
+      color: #2d4f4f;
+      font-size: 0.92rem;
+      margin-left: 8px;
+    }
+
+    /* 頁尾與連結嵌入 */
+    .footer-note {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #c8e0e0;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #3b5f5f;
+    }
+
+    .footer-note a {
+      color: #006f6f;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1px dashed #80bebe;
+      transition: border-color 0.2s;
+    }
+
+    .footer-note a:hover {
+      border-bottom: 1px solid #006060;
+    }
+
+    .inline-link-section {
+      margin: 30px 0;
+      background: #f0f9f9;
+      padding: 18px 22px;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .inline-link-section a {
+      color: #006060;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #70b3b3;
+      font-weight: 450;
+    }
+
+    /* 響應式微調 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero {
+        padding: 28px 18px;
+      }
+      .scenario-section {
+        padding: 24px 18px;
+      }
+      .tips-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- hero -->
+    <div class="hero">
+      <h1>即時賽事，從一個穩定的入口開始</h1>
+      <p>無論你是日常關注聯賽進度，還是在重要比賽日需要一手變化，資訊的起點應該乾淨、直接、不繞路。我們圍繞「穩定查閱」這一核心，整理了關於 <strong>球探比分</strong> 的產品邏輯與使用路徑。</p>
+      <span class="tagline">產品說明 · 介面思維</span>
+    </div>
+
+    <!-- 摘要卡片 -->
+    <div class="grid-cards">
+      <div class="card">
+        <h3>摘要 · 什麼是球探比分</h3>
+        <p>這是一個聚焦足球及多項運動的即時比分查詢平台。使用者可以快速檢視正在進行的比賽、完場結果以及未來賽程。頁面結構以賽事時間軸為主，不堆砌干擾資訊。</p>
+        <span class="icon-em">即時性</span>
+      </div>
+      <div class="card">
+        <h3>亮點 · 資訊密度與取捨</h3>
+        <p>每場比賽附帶核心數據：比分、紅黃牌、換人、關鍵事件。呈現方式克制，沒有過度的動畫或跳轉，適合邊看邊對照其他頁面。</p>
+        <span class="icon-em">簡潔優先</span>
+      </div>
+      <div class="card">
+        <h3>使用建議 · 場景化入口</h3>
+        <p>若你正在 PC 前跟進多場比賽，建議瀏覽器分頁常駐；若在移動端，可直接將頁面加入主畫面，獲得類似原生應用的切換體驗。</p>
+        <span class="icon-em">跨裝置</span>
+      </div>
+    </div>
+
+    <!-- 場景說明 -->
+    <div class="scenario-section">
+      <h2>穩定接入的三個場景</h2>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <h4>📋 賽前確認</h4>
+          <p>開賽前 30 分鐘，透過 <a href="https://zh-hant-qiutansports.com" style="color:#006666;text-decoration:underline;text-underline-offset:2px;">球探比分</a> 查閱預計首發與近期交鋒記錄，輔助你建立對比賽的基本判斷。</p>
+        </div>
+        <div class="scenario-item">
+          <h4>⚡ 即時追蹤</h4>
+          <p>比賽進行時，頁面每 15–30 秒自動更新關鍵事件。你無需手動刷新，進球或紅牌會以標記形式出現在時間軸上，容易捕捉。</p>
+        </div>
+        <div class="scenario-item">
+          <h4>📊 賽後回顧</h4>
+          <p>完賽後比分及統計資料會保留一段時間，方便你快速覆盤或截圖分享。也可以作為賽季長線數據的參考。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 提示區塊 -->
+    <div class="tips-box">
+      <h3>🔹 可信但克制的使用提醒</h3>
+      <ul>
+        <li>比分資料來源於公開賽事統計，延遲通常控制在 30 秒至 1 分鐘，屬於業界正常範圍。</li>
+        <li>請勿將本平台作為即時賭博或非法投注的唯一依據，體育賽事存在不確定性。</li>
+        <li>若發現特定比賽數據異常，建議對照官方賽事網站或第三方廣播確認。</li>
+        <li>移動端使用時留意網絡狀態，WiFi 與 5G 下更新節奏略有差異。</li>
+        <li>頁面不收集個人敏感資料，可放心直接瀏覽。</li>
+      </ul>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h2>常見想法 · 簡要說明</h2>
+      <div class="faq-item">
+        <strong>需要註冊或登入嗎？</strong>
+        <p>不需要。所有比分頁面皆可直接瀏覽，無帳號門檻。</p>
+      </div>
+      <div class="faq-item">
+        <strong>為什麼有時候比分停滯？</strong>
+        <p>可能原因：賽事中場休息、比賽暫停，或您的網絡暫時延遲。多數情況會在下一事件發生時恢復更新。</p>
+      </div>
+      <div class="faq-item">
+        <strong>可以只看特定聯賽嗎？</strong>
+        <p>頁面預設顯示熱門聯賽，你可透過頂部導覽篩選賽事類別，例如英超、西甲、歐冠等。</p>
+      </div>
+    </div>
+
+    <!-- 嵌入式自然連結（句子內） -->
+    <div style="margin: 30px 0 20px;">
+      <p style="background: #f0f7f7; padding: 12px 20px; border-radius: 50px; display: inline-block; font-size: 0.98rem;">
+        🏟️ 若想直接查看當前賽況，可將 <a href="https://zh-hant-qiutansports.com" style="color:#005c5c;font-weight:500;text-decoration:underline;">球探比分</a> 設為書籤，方便每日快速抵達。
+      </p>
+    </div>
+
+    <!-- 頁尾 -->
+    <div class="footer-note">
+      <p>本頁為產品說明頁，旨在提供關於 <a href="https://zh-hant-qiutansports.com">球探比分</a> 的客觀介紹與使用脈絡。所有賽事資訊以官方最終公告為準。</p>
+      <p style="margin-top: 12px; font-size: 0.85rem; color: #5f7a7a;">界面風格 · 藍綠點綴 · 卡片式佈局 ·  v1.0</p>
+    </div>
+
+  </div>
+</body>
+</html>
